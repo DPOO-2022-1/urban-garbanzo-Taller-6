@@ -1,11 +1,10 @@
 package uniandes.dpoo.taller1.modelo;
 
-
-public class YaExisteNombreEXP extends Exception {
+public class NoExisteAutorEXP extends Exception{
 
 	private static final long serialVersionUID = 1L;
 
-	public YaExisteNombreEXP(String EXPerror) {
+	public NoExisteAutorEXP(String EXPerror) {
 		super(EXPerror);
-	}
+}
 }

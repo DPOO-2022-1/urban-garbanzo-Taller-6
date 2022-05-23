@@ -174,6 +174,16 @@ public class Libreria
 			// Crear un nuevo libro
 			Libro nuevo = new Libro(elTitulo, elAutor, laCalificacion, laCategoria);
 			libros.add(nuevo);
+			
+			// anadir autor a la lista de autores si tadavia no esta
+			
+			
+			
+			if( autores.contains(elAutor) == false)
+			{
+				
+				autores.add(elAutor);
+			}
 
 			// Si existe el archivo de la portada, ponérselo al libro
 			if (existeArchivo(archivoPortada))
@@ -229,10 +239,45 @@ public class Libreria
 	}
 	
 	
-	public void BorrarLibros(String Autores) throws YaExisteNombreEXP,CategoriaNoExisteEXP
+	public void BorrarLibros(String strAutores) throws NoExisteAutorEXP
 	{
 		
-        int i;
+        int x;
+        int y;
+        String[] autoresRevisando = strAutores.trim().split(",");
+        int num_autores = autoresRevisando.length;
+        boolean autorNoExiste = false;
+        ArrayList<Libro> catalogoNuevo;
+        
+        for(x = 0; x < num_autores; x++) {
+        	
+        	if((autores.contains(autoresRevisando[x]) == false))
+        		{
+        		
+        			autorNoExiste = true;
+        		
+        		}
+ 	
+        }
+        
+        if(autorNoExiste) 
+        {	
+        	throw new NoExisteAutorEXP("Uno de los autores no existe");	
+        }
+        
+        else {
+        	
+        	
+        	// elimina los libros de los autores
+        	for(y = 0; y < catalogo.size(); y++) {
+        		
+        		
+        		
+        		
+        	}
+        	
+        }
+        
         
 	}
 	
